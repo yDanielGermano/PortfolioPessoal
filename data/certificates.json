@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Lógica de Programação",
+        "issuer": "Bradesco",
+        "date": "2024",
+        "image": "medias/certificates/logica_bradesco.png",
+        "category": "Algoritmos"
+    },
+    {
+        "title": "JavaScript Completo",
+        "issuer": "Senac",
+        "date": "2025",
+        "image": "medias/certificates/js_senac.png",
+        "category": "Frontend"
+    },
+    {
+        "title": "Client x Server Connectivity",
+        "issuer": "DIO (Digital Innovation One)",
+        "date": "2026",
+        "image": "medias/certificates/client_server_dio.png",
+        "category": "Backend"
+    },
+    {
+        "title": "Copilotos com Inteligência Artificial",
+        "issuer": "DIO (Digital Innovation One)",
+        "date": "2026",
+        "image": "medias/certificates/copilotos_ia_dio.png",
+        "category": "Inteligência Artificial"
+    }
+]

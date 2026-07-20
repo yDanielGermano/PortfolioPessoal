@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Portfólio Daniel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 700px;
+            margin: 140px auto 60px auto;
+            padding: 0 24px;
+        }
+        .form-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-red);
+            outline: none;
+        }
+        .preview-box {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            margin-top: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .output-box {
+            background-color: #080214;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #ffb86c;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin-top: 15px;
+            max-height: 250px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .btn-group .btn {
+            flex: 1;
+        }
+        .cert-list {
+            margin-top: 40px;
+        }
+        .cert-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cert-item-info h5 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+        .cert-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .btn-delete {
+            background-color: transparent;
+            border: 1px solid var(--accent-red);
+            color: var(--accent-red);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-delete:hover {
+            background-color: var(--accent-red);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">DG<span>.</span></a>
+            <nav>
+                <a href="index.html">&larr; Voltar ao Portfólio</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <h2 class="section-title">Upload de Certificados</h2>
+        
+        <div class="form-card">
+            <form id="certForm">
+                <div class="form-group">
+                    <label for="title">Título do Curso / Diploma</label>
+                    <input type="text" id="title" placeholder="Ex: Programação I em Java" required>
+                </div>
+                <div class="form-group">
+                    <label for="issuer">Instituição Emissora</label>
+                    <input type="text" id="issuer" placeholder="Ex: FATEC São Caetano" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Ano de Conclusão</label>
+                    <input type="text" id="date" placeholder="Ex: 2026" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoria</label>
+                    <select id="category">
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Algoritmos">Algoritmos & Lógica</option>
+                        <option value="Inteligência Artificial">Inteligência Artificial</option>
+                        <option value="Sistemas Embarcados">Sistemas Embarcados</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="imageFile">Imagem do Diploma (Arrastar ou Selecionar)</label>
+                    <input type="file" id="imageFile" accept="image/*" required>
+                    <div id="previewBox" class="preview-box">Nenhuma imagem carregada</div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">Adicionar Certificado</button>
+                    <button type="button" id="btnExport" class="btn btn-secondary">Exportar JSON Completo</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="jsonOutputSection" style="display:none;" class="form-card">
+            <h3>JSON Gerado para Colar no Projeto</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Copie o conteúdo abaixo e cole dentro do arquivo <strong>data/certificates.json</strong> no seu repositório.</p>
+            <div id="jsonOutput" class="output-box"></div>
+            <button id="btnCopy" class="btn btn-primary" style="margin-top:15px; width:100%;">Copiar para Área de Transferência</button>
+        </div>
+
+        <div class="cert-list">
+            <h3 style="margin-bottom:20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">Certificados Locais Adicionados</h3>
+            <div id="localCertsContainer">
+                <p style="color:var(--text-muted);">Nenhum certificado adicional carregado localmente.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Daniel Germano. Painel de Controle Estático Local.</p>
+        </div>
+    </footer>
+
+    <script>
+        const imageFileInput = document.getElementById("imageFile");
+        const previewBox = document.getElementById("previewBox");
+        const certForm = document.getElementById("certForm");
+        const jsonOutputSection = document.getElementById("jsonOutputSection");
+        const jsonOutput = document.getElementById("jsonOutput");
+        const btnExport = document.getElementById("btnExport");
+        const btnCopy = document.getElementById("btnCopy");
+        const localCertsContainer = document.getElementById("localCertsContainer");
+
+        let loadedBase64Image = "";
+
+        // Preview da imagem
+        imageFileInput.addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    loadedBase64Image = event.target.result;
+                    previewBox.innerHTML = `<img src="${loadedBase64Image}" alt="Preview">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Submissão do formulário
+        certForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const title = document.getElementById("title").value;
+            const issuer = document.getElementById("issuer").value;
+            const date = document.getElementById("date").value;
+            const category = document.getElementById("category").value;
+            const fileName = imageFileInput.files[0] ? imageFileInput.files[0].name : "default_certificate.png";
+
+            // Monta o objeto para o JSON real (caminho estático)
+            const newCertData = {
+                title: title,
+                issuer: issuer,
+                date: date,
+                image: `medias/certificates/${fileName}`,
+                category: category
+            };
+
+            // E o objeto para o localStorage local (usando base64 para poder exibir no index.html imediatamente!)
+            const localCertData = {
+                ...newCertData,
+                image: loadedBase64Image // Imagem real base64
+            };
+
+            // Salva no localStorage
+            let currentLocalList = JSON.parse(localStorage.getItem("local_certificates")) || [];
+            currentLocalList.push(localCertData);
+            localStorage.setItem("local_certificates", JSON.stringify(currentLocalList));
+
+            // Feedback visual
+            alert("Certificado cadastrado no navegador local com sucesso! Para que apareça online para outras pessoas, certifique-se de salvar a imagem real com o nome '" + fileName + "' em 'medias/certificates/' e exportar o JSON.");
+            
+            // Limpa form
+            certForm.reset();
+            previewBox.innerHTML = "Nenhuma imagem carregada";
+            loadedBase64Image = "";
+
+            renderLocalCerts();
+        });
+
+        // Renderiza certificados do localStorage
+        function renderLocalCerts() {
+            const list = JSON.parse(localStorage.getItem("local_certificates")) || [];
+            localCertsContainer.innerHTML = "";
+
+            if (list.length === 0) {
+                localCertsContainer.innerHTML = '<p style="color:var(--text-muted);">Nenhum certificado adicional carregado localmente.</p>';
+                return;
+            }
+
+            list.forEach((item, index) => {
+                const row = document.createElement("div");
+                row.className = "cert-item";
+                row.innerHTML = `
+                    <div class="cert-item-info">
+                        <h5>${item.title}</h5>
+                        <p>${item.issuer} &bull; ${item.date} &bull; ${item.category}</p>
+                    </div>
+                    <button class="btn-delete" onclick="deleteCert(${index})">Remover</button>
+                `;
+                localCertsContainer.appendChild(row);
+            });
+        }
+
+        // Remove certificado
+        window.deleteCert = function(index) {
+            let list = JSON.parse(localStorage.getItem("local_certificates")) || [];
+            list.splice(index, 1);
+            localStorage.setItem("local_certificates", JSON.stringify(list));
+            renderLocalCerts();
+        };
+
+        // Exporta JSON
+        btnExport.addEventListener("click", () => {
+            // Vamos puxar a lista original via fetch e mesclar com a lista do localStorage (ajustando a imagem para o caminho da pasta)
+            fetch("data/certificates.json")
+                .then(res => res.json())
+                .catch(() => []) // Fallback se não existir
+                .then(defaultList => {
+                    const localList = JSON.parse(localStorage.getItem("local_certificates")) || [];
+                    
+                    // Modifica a imagem das locais para o formato de pasta estática antes de exportar
+                    const cleanedLocalList = localList.map(item => {
+                        const fileName = item.image.startsWith("data:") ? "novo_diploma.png" : item.image; // limpa se for base64
+                        return {
+                            title: item.title,
+                            issuer: item.issuer,
+                            date: item.date,
+                            image: item.image.startsWith("data:") ? `medias/certificates/sua_imagem.png` : item.image,
+                            category: item.category
+                        };
+                    });
+
+                    const mergedList = [...defaultList, ...cleanedLocalList];
+                    
+                    jsonOutputSection.style.display = "block";
+                    jsonOutput.textContent = JSON.stringify(mergedList, null, 4);
+                    jsonOutputSection.scrollIntoView();
+                });
+        });
+
+        // Copiar JSON
+        btnCopy.addEventListener("click", () => {
+            navigator.clipboard.writeText(jsonOutput.textContent)
+                .then(() => alert("Código JSON copiado para a Área de Transferência!"));
+        });
+
+        // Inicializa
+        renderLocalCerts();
+    </script>
+</body>
+</html>
