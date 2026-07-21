@@ -1,30 +1,82 @@
 [
     {
-        "title": "Lógica de Programação",
-        "issuer": "Bradesco",
-        "date": "2024",
-        "image": "medias/certificates/logica_bradesco.png",
-        "category": "Algoritmos"
+        "title": "Técnico em Eletrônica",
+        "issuer": "ETEC Júlio de Mesquita",
+        "date": "09/06/2026 (Concluído em 2025)",
+        "image": "medias/certificates/DiplomaDeTécnicoEmEletrônica.jpg",
+        "link": "medias/certificates/DiplomaDeTécnicoEmEletrônica.jpg",
+        "category": "Sistemas Embarcados & Eletrônica"
     },
     {
-        "title": "JavaScript Completo",
-        "issuer": "Senac",
-        "date": "2025",
-        "image": "medias/certificates/js_senac.png",
-        "category": "Frontend"
+        "title": "Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes",
+        "issuer": "DIO (Digital Innovation One)",
+        "date": "06/07/2026",
+        "image": "medias/certificates/FundamentosIAModerna.png",
+        "link": "medias/certificates/FundamentosIAModerna.pdf",
+        "category": "Inteligência Artificial"
+    },
+    {
+        "title": "Potencializando Seus Estudos com IA (Chatbots, Copilotos e Agentes)",
+        "issuer": "DIO (Digital Innovation One)",
+        "date": "06/07/2026",
+        "image": "medias/certificates/PotencializandoEstudos.png",
+        "link": "medias/certificates/PotencializandoEstudos.pdf",
+        "category": "Inteligência Artificial"
     },
     {
         "title": "Client x Server Connectivity",
         "issuer": "DIO (Digital Innovation One)",
         "date": "2026",
-        "image": "medias/certificates/client_server_dio.png",
+        "image": "medias/certificates/CertificadoClientXServer.webp",
+        "link": "medias/certificates/CertificadoClientXServer.webp",
         "category": "Backend"
     },
     {
         "title": "Copilotos com Inteligência Artificial",
         "issuer": "DIO (Digital Innovation One)",
         "date": "2026",
-        "image": "medias/certificates/copilotos_ia_dio.png",
+        "image": "medias/certificates/CertificadoCopilotosDeIA.png",
+        "link": "medias/certificates/CertificadoCopilotosDeIA.pdf",
         "category": "Inteligência Artificial"
+    },
+    {
+        "title": "Introdução à Engenharia de Prompts",
+        "issuer": "DIO (Digital Innovation One)",
+        "date": "2026",
+        "image": "medias/certificates/CertificadoIntroducaoEngenhariaDePrompts.png",
+        "link": "medias/certificates/CertificadoIntroducaoEngenhariaDePrompts.pdf",
+        "category": "Inteligência Artificial"
+    },
+    {
+        "title": "JavaScript Completo",
+        "issuer": "Senac",
+        "date": "2025",
+        "image": "medias/certificates/certificadosJSSENAC.png",
+        "link": "medias/certificates/certificadosJSSENAC.pdf",
+        "category": "Frontend"
+    },
+    {
+        "title": "Proficiência em Inglês (TOEIC)",
+        "issuer": "ETEC Júlio de Mesquita / ETS",
+        "date": "2025",
+        "image": "medias/certificates/CertificadoTOEIC_ETECJM.jpg",
+        "link": "medias/certificates/CertificadoTOEIC_ETECJM.jpg",
+        "category": "Idiomas"
+    },
+    {
+        "title": "Santander Bootcamp 2026 - Desenvolvimento & IA",
+        "issuer": "DIO & Santander",
+        "date": "2026",
+        "image": "medias/certificates/Certificado1SantanderBootcamp.webp",
+        "link": "medias/certificates/Certificado1SantanderBootcamp.webp",
+        "category": "Backend"
+    },
+    {
+        "title": "Lançamento Santander Bootcamp 2026",
+        "issuer": "DIO & Santander",
+        "date": "2026",
+        "image": "medias/certificates/CertificadoLancamentoBootcampSantander.png",
+        "link": "medias/certificates/CertificadoLancamentoBootcampSantander.pdf",
+        "category": "Outros"
     }
 ]
