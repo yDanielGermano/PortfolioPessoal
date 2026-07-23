@@ -22,7 +22,6 @@
                 <a href="#projetos" data-i18n="nav-projects">Projetos</a>
                 <a href="#certificacoes" data-i18n="nav-certs">Certificados</a>
                 <a href="#formacao" data-i18n="nav-edu">Formação</a>
-                <a href="admin.html" class="nav-btn" data-i18n="nav-upload">Upload</a>
             </nav>
         </div>
     </header>
@@ -241,7 +240,7 @@
         </div>
     </footer>
 
-    <!-- Script de Sincronização Dinâmica -->
+    <!-- Script de Carregamento de Certificações -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             fetch("data/certificates.json")
@@ -249,19 +248,12 @@
                     if (!response.ok) throw new Error("Erro ao carregar arquivo de certificados.");
                     return response.json();
                 })
-                .then(defaultData => {
-                    const localData = JSON.parse(localStorage.getItem("local_certificates")) || [];
-                    const mergedData = [...defaultData, ...localData];
-                    renderCertificates(mergedData);
+                .then(data => {
+                    renderCertificates(data);
                 })
                 .catch(err => {
-                    const localData = JSON.parse(localStorage.getItem("local_certificates")) || [];
-                    if (localData.length > 0) {
-                        renderCertificates(localData);
-                    } else {
-                        const container = document.getElementById("certificatesContainer");
-                        container.innerHTML = `<p class="error">Não foi possível carregar os certificados diretamente. ${err.message}</p>`;
-                    }
+                    const container = document.getElementById("certificatesContainer");
+                    container.innerHTML = `<p class="error">Não foi possível carregar os certificados. ${err.message}</p>`;
                 });
         });
 

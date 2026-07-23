@@ -1,0 +1,14 @@
+# Arquivos locais contendo dados descriptografados
+data/certificates.json
+
+# Arquivos de sistema e IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+.DS_Store
+Thumbs.db

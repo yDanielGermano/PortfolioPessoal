@@ -568,6 +568,27 @@ footer {
     .header-container {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    nav {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    nav::-webkit-scrollbar {
+        display: none; /* Safari e Chrome */
+    }
+    
+    nav a {
+        flex-shrink: 0;
     }
     
     .hero h1 {

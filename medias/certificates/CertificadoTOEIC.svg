@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Definições de Gradientes e Filtros -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0e" />
+      <stop offset="100%" stop-color="#141418" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1e27" />
+      <stop offset="100%" stop-color="#b30e15" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <stop offset="0%" stop-color="#ff1e27" stop-opacity="0.5"/>
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="800" height="500" fill="url(#bgGrad)" rx="16"/>
+  
+  <!-- Borda Externa -->
+  <rect x="15" y="15" width="770" height="470" fill="none" stroke="#24242d" stroke-width="2" rx="12"/>
+  
+  <!-- Detalhe da Borda Vermelha -->
+  <rect x="25" y="25" width="750" height="450" fill="none" stroke="url(#accentGrad)" stroke-width="3" rx="10" stroke-opacity="0.8"/>
+  
+  <!-- Linhas Decorativas nos Cantos -->
+  <path d="M 25 60 L 25 25 L 60 25" fill="none" stroke="#ff1e27" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 775 60 L 775 25 L 740 25" fill="none" stroke="#ff1e27" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 25 440 L 25 475 L 60 475" fill="none" stroke="#ff1e27" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 775 440 L 775 475 L 740 475" fill="none" stroke="#ff1e27" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Logo de Fundo Texturizado (Idiomas/Mundo) -->
+  <g opacity="0.05" transform="translate(400, 250) scale(1.5)">
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="90" ry="35" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <ellipse cx="0" cy="0" rx="35" ry="90" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="-90" y1="0" x2="90" y2="0" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="0" y1="-90" x2="0" y2="90" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+
+  <!-- Cabeçalho do Diploma -->
+  <text x="400" y="90" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600" fill="#ff1e27" letter-spacing="4" text-anchor="middle">
+    INTERNATIONAL CERTIFICATION
+  </text>
+  
+  <text x="400" y="140" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="700" fill="#ffffff" letter-spacing="-0.5" text-anchor="middle">
+    Test of English for International Communication
+  </text>
+  
+  <text x="400" y="175" font-family="'Outfit', sans-serif" font-size="16" font-style="italic" fill="#b3b3b3" text-anchor="middle">
+    Proficiência em Língua Inglesa &bull; Certificação TOEIC®
+  </text>
+
+  <!-- Corpo do Texto -->
+  <text x="400" y="240" font-family="'Outfit', sans-serif" font-size="14" fill="#b3b3b3" text-anchor="middle">
+    Certificamos que o aluno e desenvolvedor
+  </text>
+
+  <text x="400" y="275" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">
+    Daniel Germano Lima dos Santos
+  </text>
+
+  <text x="400" y="315" font-family="'Outfit', sans-serif" font-size="14" fill="#b3b3b3" text-anchor="middle">
+    demonstrou proficiência prática no idioma inglês correspondente ao nível de proficiência profissional
+  </text>
+
+  <text x="400" y="345" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600" fill="#ffffff" text-anchor="middle">
+    Nível Intermediário B1 (Profissional)
+  </text>
+  
+  <text x="400" y="375" font-family="'Outfit', sans-serif" font-size="13" fill="#ff1e27" font-weight="600" text-anchor="middle" letter-spacing="1">
+    CONVENIADO ETEC JÚLIO DE MESQUITA &bull; EXAME EM 2025
+  </text>
+
+  <!-- Selo e Detalhes de Autenticação Visual -->
+  <g transform="translate(400, 425)" text-anchor="middle">
+    <text x="0" y="0" font-family="'Outfit', sans-serif" font-size="10" fill="#666675" letter-spacing="1">
+      ETS COOPERATIVE PROGRAM &bull; CONFIRMADO SEM DADOS CONFIDENCIAIS
+    </text>
+    <rect x="-180" y="-12" width="360" height="1" fill="#24242d"/>
+  </g>
+</svg>

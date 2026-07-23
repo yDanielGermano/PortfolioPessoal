@@ -3,8 +3,8 @@
         "title": "Técnico em Eletrônica",
         "issuer": "ETEC Júlio de Mesquita",
         "date": "09/06/2026 (Concluído em 2025)",
-        "image": "medias/certificates/DiplomaDeTécnicoEmEletrônica.jpg",
-        "link": "medias/certificates/DiplomaDeTécnicoEmEletrônica.jpg",
+        "image": "medias/certificates/DiplomaDeTecnicoEmEletronica.svg",
+        "link": "medias/certificates/DiplomaDeTecnicoEmEletronica.svg",
         "category": "Sistemas Embarcados & Eletrônica"
     },
     {
@@ -59,8 +59,8 @@
         "title": "Proficiência em Inglês (TOEIC)",
         "issuer": "ETEC Júlio de Mesquita / ETS",
         "date": "2025",
-        "image": "medias/certificates/CertificadoTOEIC_ETECJM.jpg",
-        "link": "medias/certificates/CertificadoTOEIC_ETECJM.jpg",
+        "image": "medias/certificates/CertificadoTOEIC.svg",
+        "link": "medias/certificates/CertificadoTOEIC.svg",
         "category": "Idiomas"
     },
     {

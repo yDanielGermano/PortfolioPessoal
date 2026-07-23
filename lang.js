@@ -6,7 +6,6 @@ const translations = {
     "nav-projects": { pt: "Projetos", en: "Projects" },
     "nav-certs": { pt: "Certificados", en: "Certificates" },
     "nav-edu": { pt: "Formação", en: "Education" },
-    "nav-upload": { pt: "Upload", en: "Upload" },
 
     // Hero Section
     "hero-tag": { pt: "Desenvolvedor de Software & Eletrônica", en: "Software Developer & Electronics Specialist" },
@@ -148,8 +147,7 @@ function updateContent() {
         "#habilidades": "nav-skills",
         "#projetos": "nav-projects",
         "#certificacoes": "nav-certs",
-        "#formacao": "nav-edu",
-        "admin.html": "nav-upload"
+        "#formacao": "nav-edu"
     };
 
     navLinks.forEach(link => {
